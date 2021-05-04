@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="animal" class="com.volkov.IoC.example13.Cat"/>
+
+    <bean id="catPerson" class="com.volkov.IoC.example13.CatPerson">
+        <property name="cat" ref="animal"/>
+    </bean>
+
+    <bean id="petPerson" class="com.volkov.IoC.example13.PetPerson">
+        <property name="animal" ref="animal"/>
+    </bean>
+
+    <bean id="animalShelter" class="com.volkov.IoC.example13.AnimalShelter">
+        <property name="animal" ref="animal"/>
+    </bean>
+</beans>
