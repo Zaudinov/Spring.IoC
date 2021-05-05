@@ -13,5 +13,7 @@ public class Main {
 
         System.out.println(bean1.getValue());
         System.out.println(bean2.getValue());
+
+        context.close();
     }
 }
