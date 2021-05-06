@@ -3,7 +3,7 @@ package com.volkov.IoC.example23;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-@Component
+@Component("cat")
 public class Cat {
 
     private String name;
