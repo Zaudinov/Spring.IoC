@@ -21,6 +21,7 @@ public class Main {
 
         AnimalShelter animalShelter = context.getBean("animalShelter", AnimalShelter.class);
         System.out.println(animalShelter.hashCode());
+        System.out.println();
 
         System.out.println(petPerson.getAnimal() == animalShelter.getAnimal());
         System.out.println(catPerson.getCat() == animalShelter.getAnimal());

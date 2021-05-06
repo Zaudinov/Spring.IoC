@@ -14,6 +14,7 @@ public class Main {
         System.out.println(bean);
         System.out.println();
         System.out.println(bean2);
+
     }
 
 
