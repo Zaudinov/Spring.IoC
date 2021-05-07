@@ -10,6 +10,8 @@ public class Main {
 
         System.out.println(config);
 
+        System.out.println(config.getEnv().getProperty("jdbc.other"));
+
         context.close();
     }
 }
