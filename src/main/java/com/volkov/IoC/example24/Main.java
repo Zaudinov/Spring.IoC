@@ -3,7 +3,6 @@ package com.volkov.IoC.example24;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Main {
-    //лучше перенести этот пример до аннотаций
 
     public static void main(String[] args) {
 

@@ -7,24 +7,16 @@ import org.springframework.stereotype.Component;
 public class Cat {
 
     private String name;
-    private int age;
 
     @Override
     public String toString() {
         return "Cat{" +
                 "name='" + name + '\'' +
-                ", age=" + age +
                 '}';
     }
 
     @Value("Barsik")
     public void setName(String name) {
         this.name = name;
-    }
-
-
-    @Value("1")
-    public void setAge(int age) {
-        this.age = age;
     }
 }
