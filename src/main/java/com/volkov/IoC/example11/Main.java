@@ -1,18 +1,37 @@
 package com.volkov.IoC.example11;
 
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import java.util.Map;
+
 public class Main {
+
     public static void main(String[] args) {
-        //try both application contexts: change context to correct.
-        //Проверьте работу обоих контекстов: измените контекст на correct.
-        ApplicationContext context = new ClassPathXmlApplicationContext("example11/application-context-incorrect.xml");
 
-        Cat cat = context.getBean("cat", Cat.class);
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("example11/application-context.xml");
 
-        Person owner = cat.getOwner();
+        ExampleBean bean = context.getBean("exampleBean", ExampleBean.class);
 
-        System.out.println(owner);
+
+        System.out.println(bean.getList().getClass().getName());
+        System.out.println(bean.getList().size());
+        for (Object o: bean.getList()) {
+            System.out.println(o);
+        }
+        System.out.println();
+
+        System.out.println(bean.getSet().getClass().getName());
+        System.out.println(bean.getSet().size());
+        System.out.println();
+
+        System.out.println(bean.getMap().getClass().getName());
+        for (Map.Entry<String, Object> entry:
+        bean.getMap().entrySet()) {
+            System.out.println(entry.getKey() + " : " + entry.getValue());
+        }
+        System.out.println();
+
+
+        context.close();
     }
 }

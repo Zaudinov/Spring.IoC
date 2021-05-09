@@ -1,50 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="person" class="com.volkov.IoC.example15.Person">
-        <property name="firstName" value="Vladimir"/>
-        <property name="surname" value="Petrov"/>
-        <property name="age" value="18"/>
-    </bean>
-
-    <bean id="exampleBean" class="com.volkov.IoC.example15.ExampleBean">
-
-    <!-- list -->
-    <property name="list">
-        <list>
-            <value>1</value>
-            <ref bean="person" />
-            <bean class="com.volkov.IoC.example15.Person">
-                <property name="firstName" value="Ivan" />
-                <property name="surname" value="Ivanovich"/>
-                <property name="age" value="29" />
-            </bean>
-        </list>
-    </property>
-
-    <!-- set -->
-    <property name="set">
-        <set>
-            <value>1</value>
-            <ref bean="person" />
-            <bean class="com.volkov.IoC.example15.Person">
-                <property name="firstName" value="Ivan" />
-                <property name="surname" value="Ivanovich"/>
-                <property name="age" value="29" />
-            </bean>
-        </set>
-    </property>
-
-    <!-- map -->
-    <property name="map">
-        <map>
-            <entry key="key1" value="1" />
-            <entry key="key2" value-ref="person"/>
-        </map>
-    </property>
-
-    </bean>
+    <bean name="exampleBean" class="com.volkov.IoC.example15.ExampleBean"
+          scope="singleton"
+          p:value="21"/>
 
 </beans>

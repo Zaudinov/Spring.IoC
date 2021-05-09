@@ -1,32 +1,16 @@
 package com.volkov.IoC.example13;
 
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        // контекст без автосвязывания
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("example13/application-context-noAutowire.xml");
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("example13/application-context.xml");
 
-        // контекс с автосвязыванием
-//       ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("example13/application-context-autowired.xml");
+        Person person = context.getBean("person", Person.class);
 
-        CatPerson catPerson = context.getBean("catPerson", CatPerson.class);
-
-
-        PetPerson petPerson = context.getBean("petPerson", PetPerson.class);
-
-
-        AnimalShelter animalShelter = context.getBean("animalShelter", AnimalShelter.class);
-
-
-        System.out.println(petPerson.getAnimal() == animalShelter.getAnimal());
-        System.out.println(catPerson.getCat() == animalShelter.getAnimal());
-        System.out.println(animalShelter.getAnimal());
-
-        System.out.println(catPerson.getCat());
+        System.out.println(person);
 
         context.close();
     }

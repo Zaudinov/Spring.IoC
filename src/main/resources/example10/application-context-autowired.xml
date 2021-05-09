@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="animal" class="com.volkov.IoC.example10.Cat"/>
+
+    <!--  Если раскомментить этот бин и оставить "animal" бин, то выбросится ошибка. Почему? -->
+    <!--  Если раскомментить этот бин и закомментить "animal" бин, то автосвязывания byName не произойдёт. Почему?   -->
+<!--    <bean id="animal1" class="com.volkov.IoC.example10.Cat"/>-->
+
+    <bean id="catPerson" class="com.volkov.IoC.example10.CatPerson"
+        autowire="byType">
+
+    </bean>
+
+    <bean id="petPerson" class="com.volkov.IoC.example10.PetPerson"
+        autowire="byName">
+    </bean>
+
+    <bean id="animalShelter" class="com.volkov.IoC.example10.AnimalShelter"
+          autowire="byName">
+
+    </bean>
+
+</beans>

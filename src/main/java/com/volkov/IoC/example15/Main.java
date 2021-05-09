@@ -2,35 +2,24 @@ package com.volkov.IoC.example15;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import java.util.Map;
-
 public class Main {
 
     public static void main(String[] args) {
 
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("example15/application-context.xml");
 
-        ExampleBean bean = context.getBean("exampleBean", ExampleBean.class);
+        //Change scope to prototype and see the difference.
+        //Поменяйте область видимости бина на prototype и проследите изменнеия.
 
+        ExampleBean exampleBean1 = context.getBean("exampleBean", ExampleBean.class);
+        ExampleBean exampleBean2 = context.getBean("exampleBean", ExampleBean.class);
+        ExampleBean exampleBean3 = context.getBean("exampleBean", ExampleBean.class);
 
-        System.out.println(bean.getList().getClass().getName());
-        System.out.println(bean.getList().size());
-        for (Object o: bean.getList()) {
-            System.out.println(o);
-        }
-        System.out.println();
+        System.out.println(exampleBean1==exampleBean2);
+        System.out.println(exampleBean2==exampleBean3);
 
-        System.out.println(bean.getSet().getClass().getName());
-        System.out.println(bean.getSet().size());
-        System.out.println();
-
-        System.out.println(bean.getMap().getClass().getName());
-        for (Map.Entry<String, Object> entry:
-        bean.getMap().entrySet()) {
-            System.out.println(entry.getKey() + " : " + entry.getValue());
-        }
-        System.out.println();
-
+        System.out.println(exampleBean1.equals(exampleBean2));
+        System.out.println(exampleBean2.equals(exampleBean3));
 
         context.close();
     }

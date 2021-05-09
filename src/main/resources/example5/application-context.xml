@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean name="exampleBean1" class="com.volkov.IoC.example5.ExampleBean1"/>
+    <bean name="exampleBean2" class="com.volkov.IoC.example5.ExampleBean2" lazy-init="default"/>
+    <bean name="exampleBean3" class="com.volkov.IoC.example5.ExampleBean3" lazy-init="false"/>
+    <bean name="exampleBean4" class="com.volkov.IoC.example5.ExampleBean4" lazy-init="true"/>
+
+</beans>

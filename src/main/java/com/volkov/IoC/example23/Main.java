@@ -1,16 +1,16 @@
 package com.volkov.IoC.example23;
 
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class Main {
-
     public static void main(String[] args) {
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Config.class);
 
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("example23/application-context.xml");
+        Config config = context.getBean("config", Config.class);
 
-        Person person = context.getBean("person", Person.class);
+        System.out.println(config);
 
-        System.out.println(person);
+        System.out.println(config.getEnv().getProperty("jdbc.other"));
 
         context.close();
     }

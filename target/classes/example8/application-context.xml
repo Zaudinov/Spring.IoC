@@ -3,13 +3,14 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer">
-        <property name="locations" value="classpath:example8/jdbc.properties"/>
-    </bean>
     <bean name="person" class="com.volkov.IoC.example8.Person">
-        <property name="firstName" value="${jdbc.firstName}"/>
-        <property name="surname" value="${jdbc.surname}"/>
-        <property name="middleName" value="${jdbc.middleName}"/>
-        <property name="age" value="${jdbc.age}"/>
+        <constructor-arg name="firstName" value="Ivan"/>
+        <constructor-arg name="surname" value="Ivanov"/>
+        <constructor-arg name="age" value="29"/>
+    </bean>
+
+    <bean name="cat" class="com.volkov.IoC.example8.Cat">
+        <constructor-arg name="name" value="Barsik"/>
+        <constructor-arg name="owner" ref="person"/>
     </bean>
 </beans>

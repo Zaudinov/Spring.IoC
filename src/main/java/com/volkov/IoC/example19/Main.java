@@ -1,20 +1,16 @@
 package com.volkov.IoC.example19;
 
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class Main {
-
     public static void main(String[] args) {
 
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("example19/application-context.xml");
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Config.class);
 
-        Cat cat = context.getBean("cat", Cat.class);
-        System.out.println(cat);
-        System.out.println();
+        Service service = context.getBean("service", Service.class);
 
-        Person person = context.getBean("person", Person.class);
-        System.out.println(person);
-        System.out.println();
+        System.out.println(service.getExampleBean().getValue());
 
+        context.close();
     }
 }

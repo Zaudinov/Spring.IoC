@@ -1,25 +1,16 @@
 package com.volkov.IoC.example24;
 
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class Main {
 
+    //Change Parrot @Order parameter to 1. Измените параметр @Order у попугая, чтобы он был равен одному. Что изменилось?
     public static void main(String[] args) {
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Config.class);
 
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("example24/application-context.xml");
+        Config config = context.getBean("config", Config.class);
 
-        //Change scope to prototype and see the difference.
-        //Поменяйте область видимости бина на prototype и проследите изменнеия.
-
-        ExampleBean exampleBean1 = context.getBean("exampleBean", ExampleBean.class);
-        ExampleBean exampleBean2 = context.getBean("exampleBean", ExampleBean.class);
-        ExampleBean exampleBean3 = context.getBean("exampleBean", ExampleBean.class);
-
-        System.out.println(exampleBean1==exampleBean2);
-        System.out.println(exampleBean2==exampleBean3);
-
-        System.out.println(exampleBean1.equals(exampleBean2));
-        System.out.println(exampleBean2.equals(exampleBean3));
+        config.voice();
 
         context.close();
     }

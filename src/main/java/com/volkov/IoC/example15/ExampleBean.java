@@ -1,42 +1,24 @@
 package com.volkov.IoC.example15;
 
-import com.volkov.IoC.example11.Person;
-
-import java.util.List;
-import java.util.Map;
-import java.util.Properties;
-import java.util.Set;
+import java.util.Objects;
 
 public class ExampleBean {
-    private List<Object> list;
-    private Set<Object> set;
-    private Map<String, Object> map;
+    private int value;
 
-    public ExampleBean() {
+    public void setValue(int value) {
+        this.value = value;
     }
 
-    public List<Object> getList() {
-        return list;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ExampleBean that = (ExampleBean) o;
+        return value == that.value;
     }
 
-    public void setList(List<Object> list) {
-        this.list = list;
+    @Override
+    public int hashCode() {
+        return Objects.hash(value);
     }
-
-    public Set<Object> getSet() {
-        return set;
-    }
-
-    public void setSet(Set<Object> set) {
-        this.set = set;
-    }
-
-    public Map<String, Object> getMap() {
-        return map;
-    }
-
-    public void setMap(Map<String, Object> map) {
-        this.map = map;
-    }
-
 }
