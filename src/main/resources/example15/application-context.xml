@@ -45,13 +45,6 @@
         </map>
     </property>
 
-    <!-- properties -->
-    <property name="props">
-        <props>
-            <prop key="name">Ivan</prop>
-            <prop key="age">29</prop>
-        </props>
-    </property>
     </bean>
 
 </beans>

@@ -11,7 +11,6 @@ public class ExampleBean {
     private List<Object> list;
     private Set<Object> set;
     private Map<String, Object> map;
-    private Properties props;
 
     public ExampleBean() {
     }
@@ -40,12 +39,4 @@ public class ExampleBean {
         this.map = map;
     }
 
-
-    public Properties getProps() {
-        return props;
-    }
-
-    public void setProps(Properties props) {
-        this.props = props;
-    }
 }

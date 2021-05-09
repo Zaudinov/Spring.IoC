@@ -1,4 +1,4 @@
-package com.volkov.IoC.example3;
+package com.volkov.IoC.example2;
 
 public class ExampleBean {
     private String name;

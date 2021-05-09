@@ -1,4 +1,4 @@
-package com.volkov.IoC.example5;
+package com.volkov.IoC.example4;
 
 public class PersonFactory {
 

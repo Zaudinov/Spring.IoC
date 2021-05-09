@@ -31,9 +31,6 @@ public class Main {
         }
         System.out.println();
 
-        System.out.println(bean.getProps().getClass().getName());
-        System.out.println(bean.getProps().keySet().size());
-        System.out.println(bean.getProps().values().size());
 
         context.close();
     }

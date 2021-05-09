@@ -3,10 +3,6 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-
-    <bean name="personFactory" class="com.volkov.IoC.example5.PersonFactory"/>
-    <bean name="person" factory-bean="personFactory" factory-method="createInstance">
-        <constructor-arg name="name" value="Ivan"/>
-        <constructor-arg name="age" value="29"/>
+    <bean id="exampleBean" class="com.volkov.IoC.example2.ExampleBean">
     </bean>
 </beans>
