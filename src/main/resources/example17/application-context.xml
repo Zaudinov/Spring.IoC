@@ -1,8 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean name="exampleBean" class="com.volkov.IoC.example17.ExampleBean"/>
+    <context:annotation-config/>
+    <context:component-scan base-package="com.volkov.IoC.example17"/>
+
+    <bean name="exampleBean" class="com.volkov.IoC.example17.ExampleBean">
+<!--        <property name="dep" ref="dep"/>-->
+        <property name="value" value="322"/>
+    </bean>
+
+    <bean name="dep" class="com.volkov.IoC.example15.ExampleBean">
+        <property name="value" value="2"/>
+    </bean>
 
 </beans>

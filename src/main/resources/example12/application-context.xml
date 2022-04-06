@@ -7,7 +7,7 @@
 
     <bean name="cat" class="com.volkov.IoC.example12.Cat" p:name="Barsik"/>
 
-<!--    <bean name="cat1" class="com.volkov.IoC.example12.Cat" p:name="Vas'ka"/>-->
+    <bean name="cat1" class="com.volkov.IoC.example12.Cat" p:name="Vas'ka"/>
 
     <bean name="person" class="com.volkov.IoC.example12.Person" p:name="Ivan"/>
 </beans>
